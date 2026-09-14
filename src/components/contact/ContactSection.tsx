@@ -174,7 +174,7 @@ export function ContactSection() {
                             aria-pressed={selected}
                             className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                               selected
-                                ? "border-accent bg-accent text-background shadow-sm shadow-accent/25"
+                                ? "border-accent bg-accent text-accent-contrast shadow-sm shadow-accent/25"
                                 : "border-border bg-background text-primary-light hover:border-accent/40 hover:text-primary"
                             }`}
                           >
@@ -201,7 +201,7 @@ export function ContactSection() {
 
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-background shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover hover:shadow-accent/30"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-accent-contrast shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover hover:shadow-accent/30"
                   >
                     Submit
                     <svg

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import rsLogo from "@/assets/rs_logo.jpg";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const nav = [
   { label: "Home", href: "/" },
@@ -29,7 +30,7 @@ export function Header() {
               fill
               sizes="44px"
               priority
-              className="object-contain invert mix-blend-screen"
+              className="logo-blend object-contain"
             />
           </span>
           <span className="flex flex-col leading-none">
@@ -66,12 +67,15 @@ export function Header() {
             );
           })}
         </nav>
-        <Link
-          href="/contact"
-          className="hidden rounded-sm bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-background transition-colors hover:bg-accent-hover md:inline-flex"
-        >
-          Talk to an Expert
-        </Link>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Link
+            href="/contact"
+            className="hidden rounded-sm bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-accent-contrast transition-colors hover:bg-accent-hover md:inline-flex"
+          >
+            Talk to an Expert
+          </Link>
+        </div>
       </div>
     </header>
   );

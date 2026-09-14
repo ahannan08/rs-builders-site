@@ -40,7 +40,7 @@ export function FeaturedMessage() {
         <div className="mt-10">
           <Button
             href="/properties"
-            className="!bg-accent !text-background hover:!bg-accent-hover"
+            className="!bg-accent !text-accent-contrast hover:!bg-accent-hover"
           >
             Find Your Opportunity
           </Button>

@@ -151,7 +151,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface text-primary">
+    <footer className="border-t border-border bg-elevated text-primary">
       <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-10">
           <div>

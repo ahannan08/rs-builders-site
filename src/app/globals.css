@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-:root {
+/* ---------- Theme: Noir (black + brown/gold) ---------- */
+:root,
+[data-theme="noir"] {
+  color-scheme: dark;
+
   --background: #0d0e0f;
   --surface: #16181a;
   --elevated: #1f2124;
@@ -8,8 +12,74 @@
   --primary-light: #a8aaa9;
   --accent: #c9a465;
   --accent-hover: #dcba7e;
+  --accent-contrast: #0d0e0f;
   --muted: #70747a;
   --border: #272a2e;
+
+  --iso-road-outer: #3a3e44;
+  --iso-road: #4c5157;
+  --iso-doc-fill: rgba(255, 255, 255, 0.07);
+  --iso-doc-stroke: rgba(255, 255, 255, 0.2);
+  --iso-doc-line: rgba(255, 255, 255, 0.28);
+  --iso-plot-top: #8d7448;
+  --iso-plot-inset: #6d5a37;
+  --iso-wall: #4a4d52;
+  --iso-wall-dark: #33363a;
+  --iso-label: #f3f3f1;
+}
+
+/* ---------- Theme: Cream (warm sand) ---------- */
+[data-theme="cream"] {
+  color-scheme: light;
+
+  --background: #f7f5f1;
+  --surface: #ffffff;
+  --elevated: #f0ece5;
+  --primary: #2e2e2e;
+  --primary-light: #5c5c5c;
+  --accent: #a88a5c;
+  --accent-hover: #8f7148;
+  --accent-contrast: #ffffff;
+  --muted: #b7b2a9;
+  --border: #e8e4dc;
+
+  --iso-road-outer: #4a4a47;
+  --iso-road: #3d3d3b;
+  --iso-doc-fill: rgba(255, 255, 255, 0.78);
+  --iso-doc-stroke: rgba(183, 178, 169, 0.95);
+  --iso-doc-line: rgba(74, 74, 71, 0.4);
+  --iso-plot-top: #c4a574;
+  --iso-plot-inset: #b8925e;
+  --iso-wall: #d9d2c5;
+  --iso-wall-dark: #b8ae9e;
+  --iso-label: #2e2e2e;
+}
+
+/* ---------- Theme: Grey (grey + black) ---------- */
+[data-theme="grey"] {
+  color-scheme: dark;
+
+  --background: #22252a;
+  --surface: #2b2f35;
+  --elevated: #353a41;
+  --primary: #f1f3f5;
+  --primary-light: #b2b8c0;
+  --accent: #c3a877;
+  --accent-hover: #d6bd8c;
+  --accent-contrast: #1a1d21;
+  --muted: #7e858e;
+  --border: #3a4048;
+
+  --iso-road-outer: #454b53;
+  --iso-road: #596068;
+  --iso-doc-fill: rgba(255, 255, 255, 0.09);
+  --iso-doc-stroke: rgba(255, 255, 255, 0.24);
+  --iso-doc-line: rgba(255, 255, 255, 0.32);
+  --iso-plot-top: #96805a;
+  --iso-plot-inset: #74613e;
+  --iso-wall: #5b616a;
+  --iso-wall-dark: #3f444b;
+  --iso-label: #f1f3f5;
 }
 
 @theme inline {
@@ -20,6 +90,7 @@
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --font-sans: var(--font-dm-sans);
@@ -60,4 +131,15 @@ body {
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--accent);
+}
+
+/* The logo is dark artwork on a white JPG background: blend it into either polarity. */
+.logo-blend {
+  mix-blend-mode: multiply;
+}
+
+[data-theme="noir"] .logo-blend,
+[data-theme="grey"] .logo-blend {
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
