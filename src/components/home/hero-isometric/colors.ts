@@ -1,0 +1,17 @@
+export const isoColors = {
+  bg: "#F7F5F1",
+  charcoal: "#2E2E2E",
+  charcoalMid: "#3D3D3B",
+  charcoalLight: "#4A4A47",
+  sand: "#A88A5C",
+  sandGlow: "#EFC98A",
+  docFill: "rgba(255, 255, 255, 0.78)",
+  docStroke: "rgba(183, 178, 169, 0.95)",
+  plotSoil: "#C4A574",
+  plotSoilDark: "#B8925E",
+  wallStone: "#D9D2C5",
+  wallStoneDark: "#B8AE9E",
+  plotFence: "#5C5C5C",
+  grass: "#7A8F6E",
+  villaWhite: "#F5F3EF",
+} as const;
