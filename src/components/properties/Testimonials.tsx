@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import customerImage from "@/assets/customer.png";
 
 type Testimonial = {
   quote: string;
@@ -79,7 +81,7 @@ export function Testimonials() {
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <p className="section-label">Customer trust</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
@@ -88,6 +90,22 @@ export function Testimonials() {
             <p className="mt-6 leading-relaxed text-primary-light">
               Real estate is built on relationships.
             </p>
+
+            <div className="relative mt-8 h-64 w-full max-w-md sm:h-72">
+              <Image
+                src={customerImage}
+                alt="RS Builders & Developers customers"
+                fill
+                sizes="(min-width: 1024px) 28rem, 100vw"
+                placeholder="blur"
+                className="object-cover"
+                style={{ objectPosition: "25% center" }}
+              />
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background via-background/60 to-transparent"
+                aria-hidden
+              />
+            </div>
           </div>
 
           <div

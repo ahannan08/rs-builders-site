@@ -20,7 +20,6 @@ const floatingLabel =
 
 export function ContactSection() {
   const [interest, setInterest] = useState<Interest | null>(null);
-  const [intent, setIntent] = useState<"enquiry" | "site-visit">("enquiry");
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -103,8 +102,7 @@ export function ContactSection() {
                     Thank you — we have your details.
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-primary-light">
-                    Our team will reach out shortly regarding your{" "}
-                    {intent === "site-visit" ? "site visit" : "enquiry"}.
+                    Our team will reach out shortly regarding your enquiry.
                   </p>
                   <button
                     type="button"
@@ -201,36 +199,26 @@ export function ContactSection() {
                     </label>
                   </div>
 
-                  <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
-                    <button
-                      type="submit"
-                      onClick={() => setIntent("enquiry")}
-                      className="group inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover hover:shadow-accent/30"
+                  <button
+                    type="submit"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover hover:shadow-accent/30"
+                  >
+                    Submit
+                    <svg
+                      viewBox="0 0 16 16"
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden
                     >
-                      Talk to an Expert
-                      <svg
-                        viewBox="0 0 16 16"
-                        className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                        aria-hidden
-                      >
-                        <path
-                          d="M3 8h9m0 0-3.5-3.5M12 8l-3.5 3.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      type="submit"
-                      onClick={() => setIntent("site-visit")}
-                      className="inline-flex flex-1 items-center justify-center rounded-xl border border-border bg-background px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:border-accent/40 hover:bg-surface"
-                    >
-                      Book a Site Visit
-                    </button>
-                  </div>
+                      <path
+                        d="M3 8h9m0 0-3.5-3.5M12 8l-3.5 3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
 
                   <p className="text-xs leading-relaxed text-muted">
                     By submitting, you agree to be contacted about property

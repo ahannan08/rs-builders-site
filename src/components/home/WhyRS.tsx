@@ -17,7 +17,10 @@ const locationFactors = [
 
 export function WhyRS() {
   return (
-    <section className="border-y border-border bg-surface py-20 lg:py-28">
+    <section
+      id="why-rs"
+      className="scroll-mt-24 border-y border-border bg-surface py-20 lg:py-28"
+    >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div>
