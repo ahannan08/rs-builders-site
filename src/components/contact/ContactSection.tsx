@@ -13,7 +13,7 @@ const interests = [
 type Interest = (typeof interests)[number];
 
 const inputBase =
-  "peer w-full rounded-xl border border-border bg-background px-4 py-3.5 text-sm text-primary transition-all placeholder:text-transparent focus:border-accent focus:bg-surface focus:outline-none focus:ring-4 focus:ring-accent/10";
+  "peer w-full rounded-xl border border-border bg-background px-4 py-3.5 text-sm text-primary transition-all placeholder:text-transparent focus:border-accent focus:bg-elevated focus:outline-none focus:ring-4 focus:ring-accent/15";
 
 const floatingLabel =
   "pointer-events-none absolute left-4 top-3.5 text-sm text-muted transition-all peer-focus:-translate-y-6 peer-focus:text-[11px] peer-focus:font-semibold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-accent peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-primary-light";
@@ -71,7 +71,7 @@ export function ContactSection() {
             </ul>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-primary/[0.04]">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-black/40">
             <div
               className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent/40 to-transparent"
               aria-hidden
@@ -174,7 +174,7 @@ export function ContactSection() {
                             aria-pressed={selected}
                             className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                               selected
-                                ? "border-accent bg-accent text-white shadow-sm shadow-accent/25"
+                                ? "border-accent bg-accent text-background shadow-sm shadow-accent/25"
                                 : "border-border bg-background text-primary-light hover:border-accent/40 hover:text-primary"
                             }`}
                           >
@@ -201,7 +201,7 @@ export function ContactSection() {
 
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover hover:shadow-accent/30"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-background shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover hover:shadow-accent/30"
                   >
                     Submit
                     <svg

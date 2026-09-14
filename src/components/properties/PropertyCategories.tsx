@@ -68,8 +68,8 @@ export function PropertyCategories() {
               <article
                 className={`flex h-full flex-col rounded-sm border p-8 transition-shadow duration-300 ${
                   category.featured
-                    ? "border-primary bg-primary text-white"
-                    : "border-border bg-surface shadow-sm hover:shadow-md hover:shadow-primary/5"
+                    ? "border-accent/40 bg-elevated"
+                    : "border-border bg-surface hover:border-accent/35"
                 }`}
               >
                 <p
@@ -81,14 +81,14 @@ export function PropertyCategories() {
                 </p>
                 <h3
                   className={`mt-4 font-display text-2xl font-semibold leading-snug ${
-                    category.featured ? "text-white" : "text-primary"
+                    category.featured ? "text-primary" : "text-primary"
                   }`}
                 >
                   {category.tagline}
                 </h3>
                 <p
                   className={`mt-4 flex-1 text-sm leading-relaxed ${
-                    category.featured ? "text-white/75" : "text-primary-light"
+                    category.featured ? "text-primary-light" : "text-primary-light"
                   }`}
                 >
                   {category.description}

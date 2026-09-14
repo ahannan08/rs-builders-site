@@ -69,8 +69,8 @@ function DocumentCard({
           stroke={c.docStroke}
           strokeWidth={1}
         />
-        <line x1={9} y1={14} x2={39} y2={14} stroke={c.charcoalLight} strokeWidth={1} opacity={0.25} />
-        <line x1={9} y1={22} x2={33} y2={22} stroke={c.charcoalLight} strokeWidth={1} opacity={0.2} />
+        <line x1={9} y1={14} x2={39} y2={14} stroke={c.docLine} strokeWidth={1} opacity={0.5} />
+        <line x1={9} y1={22} x2={33} y2={22} stroke={c.docLine} strokeWidth={1} opacity={0.35} />
         {children}
       </Float>
     </g>
@@ -115,7 +115,7 @@ function PlotTile({
         x={cx}
         y={cy + 5}
         textAnchor="middle"
-        fill={c.charcoal}
+        fill={c.plotLabel}
         fontSize={14}
         fontWeight={700}
         fontFamily="system-ui, sans-serif"
@@ -159,7 +159,7 @@ export function HeroIsometricScene({ animate }: HeroIsometricSceneProps) {
         <path
           d={ROAD}
           fill="none"
-          stroke={c.charcoalLight}
+          stroke={c.charcoalMid}
           strokeWidth={13}
           strokeLinecap="round"
           opacity={0.2}
@@ -168,7 +168,7 @@ export function HeroIsometricScene({ animate }: HeroIsometricSceneProps) {
           id="roadPath"
           d={ROAD}
           fill="none"
-          stroke={c.charcoalMid}
+          stroke={c.charcoalLight}
           strokeWidth={9}
           strokeLinecap="round"
         />
@@ -186,7 +186,7 @@ export function HeroIsometricScene({ animate }: HeroIsometricSceneProps) {
         <path
           d="M 96 150 L 82 132"
           fill="none"
-          stroke={c.charcoalMid}
+          stroke={c.charcoalLight}
           strokeWidth={6}
           strokeLinecap="round"
         />
@@ -245,7 +245,7 @@ export function HeroIsometricScene({ animate }: HeroIsometricSceneProps) {
         </DocumentCard>
 
         <DocumentCard x={74} y={56} rotate={5} delay={0.75} animate={shouldAnimate}>
-          <circle cx={24} cy={38} r={7} fill="none" stroke={c.charcoalMid} strokeWidth={1} />
+          <circle cx={24} cy={38} r={7} fill="none" stroke={c.docLine} strokeWidth={1} />
           <polygon points="24,32 28,40 20,40" fill="none" stroke={c.sand} strokeWidth={1} />
           <circle cx={24} cy={40} r={1.5} fill={c.sand} />
         </DocumentCard>

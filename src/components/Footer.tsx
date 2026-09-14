@@ -151,7 +151,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-primary text-white">
+    <footer className="border-t border-border bg-surface text-primary">
       <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-10">
           <div>
@@ -161,13 +161,13 @@ export function Footer() {
             <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               Dare to Dream
             </p>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-light">
               Building opportunities. Creating possibilities.
             </p>
           </div>
 
           <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+            <h3 className="text-[11px] font-bold uppercase tracking-widest text-muted">
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -175,7 +175,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-white/80 transition-colors hover:text-accent"
+                    className="text-primary-light transition-colors hover:text-accent"
                   >
                     {item.label}
                   </Link>
@@ -185,7 +185,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+            <h3 className="text-[11px] font-bold uppercase tracking-widest text-muted">
               Categories
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -193,7 +193,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-white/80 transition-colors hover:text-accent"
+                    className="text-primary-light transition-colors hover:text-accent"
                   >
                     {item.label}
                   </Link>
@@ -203,7 +203,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+            <h3 className="text-[11px] font-bold uppercase tracking-widest text-muted">
               Connect
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -217,7 +217,7 @@ export function Footer() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="inline-flex items-center gap-2.5 text-white/80 transition-colors hover:text-accent"
+                    className="inline-flex items-center gap-2.5 text-primary-light transition-colors hover:text-accent"
                   >
                     <span className="text-accent">{item.icon}</span>
                     {item.label}
@@ -228,7 +228,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} RS Builders & Developers. All Rights
             Reserved.
@@ -240,7 +240,7 @@ export function Footer() {
             >
               {contact.phone}
             </a>
-            <span className="mx-2 text-white/25">|</span>
+            <span className="mx-2 text-border">|</span>
             <a
               href={`mailto:${contact.email}`}
               className="transition-colors hover:text-accent"

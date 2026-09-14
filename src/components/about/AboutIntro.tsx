@@ -14,12 +14,12 @@ export function AboutIntro() {
         className="object-cover object-center"
         aria-hidden
       />
-      <div className="absolute inset-0 bg-primary/55" aria-hidden />
+      <div className="absolute inset-0 bg-black/55" aria-hidden />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(46, 46, 46, 0.75) 0%, rgba(46, 46, 46, 0.45) 55%, rgba(46, 46, 46, 0.25) 100%)",
+            "linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.25) 100%)",
         }}
         aria-hidden
       />

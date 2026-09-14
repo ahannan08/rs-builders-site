@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export function FeaturedMessage() {
   return (
-    <section className="relative overflow-hidden bg-primary py-24 text-white lg:py-32">
+    <section className="relative overflow-hidden bg-background py-24 text-white lg:py-32">
       <Image
         src={plotAerial}
         alt=""
@@ -14,12 +14,12 @@ export function FeaturedMessage() {
         className="object-cover object-center"
         aria-hidden
       />
-      <div className="absolute inset-0 bg-primary/30" aria-hidden />
+      <div className="absolute inset-0 bg-black/45" aria-hidden />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(65% 60% at 50% 50%, rgba(46, 46, 46, 0.55) 0%, rgba(46, 46, 46, 0.2) 60%, rgba(46, 46, 46, 0) 100%)",
+            "radial-gradient(65% 60% at 50% 50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 100%)",
         }}
         aria-hidden
       />
@@ -40,7 +40,7 @@ export function FeaturedMessage() {
         <div className="mt-10">
           <Button
             href="/properties"
-            className="!bg-accent !text-white hover:!bg-accent-hover"
+            className="!bg-accent !text-background hover:!bg-accent-hover"
           >
             Find Your Opportunity
           </Button>

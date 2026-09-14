@@ -103,7 +103,7 @@ export function WhatWeDo() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.08} className="h-full">
-              <article className="group flex h-full flex-col rounded-sm border border-border bg-surface p-8 shadow-sm transition-shadow duration-300 hover:shadow-md hover:shadow-primary/5">
+              <article className="group flex h-full flex-col rounded-sm border border-border bg-surface p-8 transition-colors duration-300 hover:border-accent/35">
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-sm bg-background text-accent transition-colors group-hover:bg-accent/10">
                   <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                     {item.icon}

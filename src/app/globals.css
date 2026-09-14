@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f5f1;
-  --surface: #ffffff;
-  --primary: #2e2e2e;
-  --primary-light: #5c5c5c;
-  --accent: #a88a5c;
-  --accent-hover: #8f7148;
-  --muted: #b7b2a9;
-  --border: #e8e4dc;
+  --background: #0d0e0f;
+  --surface: #16181a;
+  --elevated: #1f2124;
+  --primary: #f3f3f1;
+  --primary-light: #a8aaa9;
+  --accent: #c9a465;
+  --accent-hover: #dcba7e;
+  --muted: #70747a;
+  --border: #272a2e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
@@ -47,8 +49,8 @@ body {
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--muted) 25%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--muted) 25%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--muted) 18%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--muted) 18%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

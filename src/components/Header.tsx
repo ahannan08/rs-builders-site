@@ -29,7 +29,7 @@ export function Header() {
               fill
               sizes="44px"
               priority
-              className="object-contain mix-blend-multiply"
+              className="object-contain invert mix-blend-screen"
             />
           </span>
           <span className="flex flex-col leading-none">
@@ -68,7 +68,7 @@ export function Header() {
         </nav>
         <Link
           href="/contact"
-          className="hidden rounded-sm bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-primary-light md:inline-flex"
+          className="hidden rounded-sm bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-background transition-colors hover:bg-accent-hover md:inline-flex"
         >
           Talk to an Expert
         </Link>
