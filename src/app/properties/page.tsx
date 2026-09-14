@@ -1,14 +1,33 @@
+import type { Metadata } from "next";
+import { ContactSection } from "@/components/contact/ContactSection";
+import { OurVentures } from "@/components/properties/OurVentures";
+import { PropertiesIntro } from "@/components/properties/PropertiesIntro";
+import { PropertyCategories } from "@/components/properties/PropertyCategories";
+import { Testimonials } from "@/components/properties/Testimonials";
+import { Reveal } from "@/components/ui/Reveal";
+
+export const metadata: Metadata = {
+  title: "Our Properties | RS Builders & Developers",
+  description:
+    "Explore residential, open plots, land, commercial and investment opportunities across Telangana with RS Builders & Developers.",
+};
+
 export default function PropertiesPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
-      <p className="section-label">Portfolio</p>
-      <h1 className="mt-3 font-display text-4xl font-medium text-primary">
-        Properties
-      </h1>
-      <p className="mt-4 max-w-xl text-primary-light">
-        Featured listings coming soon. Contact us to explore current
-        opportunities across Telangana.
-      </p>
-    </div>
+    <>
+      <PropertiesIntro />
+      <Reveal>
+        <PropertyCategories />
+      </Reveal>
+      <Reveal>
+        <OurVentures />
+      </Reveal>
+      <Reveal>
+        <Testimonials />
+      </Reveal>
+      <Reveal>
+        <ContactSection />
+      </Reveal>
+    </>
   );
 }

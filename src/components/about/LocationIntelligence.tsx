@@ -24,42 +24,40 @@ export function LocationIntelligence() {
     <section className="border-y border-border bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <div>
+          <div className="lg:sticky lg:top-28">
             <p className="section-label">Location intelligence</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
               We Think Beyond Today&apos;s Map.
             </h2>
-          </div>
-          <div className="lg:pt-2">
-            <p className="leading-relaxed text-primary-light">
+            <p className="mt-6 leading-relaxed text-primary-light">
               Our locations are selected with an eye on the future.
             </p>
             <p className="mt-4 leading-relaxed text-primary-light">
               We look for areas influenced by:
             </p>
           </div>
-        </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14">
-          {pillars.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 0.08} className="h-full">
-              <article className="h-full rounded-sm border border-border bg-background p-8">
-                <h3 className="font-display text-xl font-semibold text-primary">
-                  {pillar.title}
-                </h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {pillar.items.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-sm border border-border bg-surface px-3 py-1.5 text-xs font-medium text-primary-light"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-          ))}
+          <div className="grid gap-5 sm:grid-cols-2">
+            {pillars.map((pillar, index) => (
+              <Reveal key={pillar.title} delay={index * 0.08} className="h-full">
+                <article className="h-full rounded-sm border border-border bg-background p-6">
+                  <h3 className="font-display text-lg font-semibold text-primary">
+                    {pillar.title}
+                  </h3>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {pillar.items.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-sm border border-border bg-surface px-2.5 py-1.5 text-xs font-medium text-primary-light"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         <div className="mt-14 rounded-sm bg-primary px-8 py-10 text-white sm:px-12">
