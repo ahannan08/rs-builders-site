@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import customerImage from "@/assets/customer.png";
 
 type Testimonial = {
   quote: string;
@@ -71,7 +69,9 @@ export function Testimonials() {
 
   useEffect(() => {
     if (paused) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reduced) return;
 
     const timer = window.setInterval(next, 6000);
@@ -82,7 +82,7 @@ export function Testimonials() {
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div>
+          <div className="min-w-0">
             <p className="section-label">Customer trust</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
               500+ Customers. 50+ Stories.
@@ -90,102 +90,88 @@ export function Testimonials() {
             <p className="mt-6 leading-relaxed text-primary-light">
               Real estate is built on relationships.
             </p>
-
-            <div className="relative mt-8 h-64 w-full max-w-md sm:h-72">
-              <Image
-                src={customerImage}
-                alt="RS Builders & Developers customers"
-                fill
-                sizes="(min-width: 1024px) 28rem, 100vw"
-                placeholder="blur"
-                className="object-cover"
-                style={{ objectPosition: "25% center" }}
-              />
-              <div
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background via-background/60 to-transparent"
-                aria-hidden
-              />
-            </div>
           </div>
 
           <div
-            className="relative"
+            className="relative min-w-0"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <div className="overflow-hidden rounded-sm border border-border bg-surface">
-              <div
-                className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${index * 100}%)` }}
-              >
-                {testimonials.map((testimonial, i) => (
-                  <figure
-                    key={i}
-                    className="w-full shrink-0 p-8 sm:p-10"
-                    aria-hidden={i !== index}
-                  >
-                    <Stars rating={testimonial.rating} />
-                    <blockquote className="mt-5 font-display text-xl leading-snug text-primary sm:text-2xl">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </blockquote>
-                    <figcaption className="mt-6 text-sm font-semibold text-primary-light">
-                      — {testimonial.name}
-                    </figcaption>
-                  </figure>
-                ))}
+            <div>
+              <div className="overflow-hidden rounded-sm border border-border bg-surface">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${index * 100}%)` }}
+                >
+                  {testimonials.map((testimonial, i) => (
+                    <figure
+                      key={i}
+                      className="w-full shrink-0 p-8 sm:p-10"
+                      aria-hidden={i !== index}
+                    >
+                      <Stars rating={testimonial.rating} />
+                      <blockquote className="mt-5 font-display text-xl leading-snug text-primary sm:text-2xl">
+                        &ldquo;{testimonial.quote}&rdquo;
+                      </blockquote>
+                      <figcaption className="mt-6 text-sm font-semibold text-primary-light">
+                        — {testimonial.name}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className="mt-6 flex items-center justify-between">
-              <div className="flex gap-2">
-                {testimonials.map((_, i) => (
+              <div className="mt-6 flex items-center justify-between">
+                <div className="flex gap-2">
+                  {testimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setIndex(i)}
+                      aria-label={`Show testimonial ${i + 1}`}
+                      aria-current={i === index}
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === index ? "w-6 bg-accent" : "w-1.5 bg-muted"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className="flex gap-2">
                   <button
-                    key={i}
                     type="button"
-                    onClick={() => setIndex(i)}
-                    aria-label={`Show testimonial ${i + 1}`}
-                    aria-current={i === index}
-                    className={`h-1.5 rounded-full transition-all ${
-                      i === index ? "w-6 bg-accent" : "w-1.5 bg-muted"
-                    }`}
-                  />
-                ))}
-              </div>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={prev}
-                  aria-label="Previous testimonial"
-                  className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-accent/40 hover:text-accent"
-                >
-                  <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
-                    <path
-                      d="M10 3 5 8l5 5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={next}
-                  aria-label="Next testimonial"
-                  className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-accent/40 hover:text-accent"
-                >
-                  <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
-                    <path
-                      d="M6 3l5 5-5 5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
+                    onClick={prev}
+                    aria-label="Previous testimonial"
+                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-accent/40 hover:text-accent"
+                  >
+                    <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
+                      <path
+                        d="M10 3 5 8l5 5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={next}
+                    aria-label="Next testimonial"
+                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-accent/40 hover:text-accent"
+                  >
+                    <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
+                      <path
+                        d="M6 3l5 5-5 5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
