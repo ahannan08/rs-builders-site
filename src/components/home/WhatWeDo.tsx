@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 
 const services = [
   {
@@ -33,7 +34,12 @@ const services = [
       "Property opportunities designed around the needs of individuals and families.",
     icon: (
       <>
-        <path d="M12 3L4 10v9h16v-9L12 3z" stroke="currentColor" strokeWidth="1.5" fill="none" />
+        <path
+          d="M12 3L4 10v9h16v-9L12 3z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          fill="none"
+        />
         <path d="M9 19v-5h6v5" stroke="currentColor" strokeWidth="1.5" />
       </>
     ),
@@ -95,27 +101,22 @@ export function WhatWeDo() {
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((item) => (
-            <article
-              key={item.title}
-              className="group flex flex-col rounded-sm border border-border bg-surface p-8 shadow-sm transition-shadow duration-300 hover:shadow-md hover:shadow-primary/5"
-            >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-sm bg-background text-accent transition-colors group-hover:bg-accent/10">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-6 w-6"
-                  aria-hidden
-                >
-                  {item.icon}
-                </svg>
-              </div>
-              <h3 className="font-display text-xl font-semibold text-primary">
-                {item.title}
-              </h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-primary-light">
-                {item.description}
-              </p>
-            </article>
+          {services.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.08} className="h-full">
+              <article className="group flex h-full flex-col rounded-sm border border-border bg-surface p-8 shadow-sm transition-shadow duration-300 hover:shadow-md hover:shadow-primary/5">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-sm bg-background text-accent transition-colors group-hover:bg-accent/10">
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
+                    {item.icon}
+                  </svg>
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary">
+                  {item.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-primary-light">
+                  {item.description}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
         <div className="mt-12">

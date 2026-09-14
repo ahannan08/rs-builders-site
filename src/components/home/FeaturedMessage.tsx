@@ -1,10 +1,26 @@
+import Image from "next/image";
+import plotAerial from "@/assets/plot.png";
 import { Button } from "@/components/ui/Button";
 
 export function FeaturedMessage() {
   return (
     <section className="relative overflow-hidden bg-primary py-24 text-white lg:py-32">
+      <Image
+        src={plotAerial}
+        alt=""
+        fill
+        sizes="100vw"
+        placeholder="blur"
+        className="object-cover object-center"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-primary/30" aria-hidden />
       <div
-        className="absolute inset-0 opacity-20 hero-grid invert"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(65% 60% at 50% 50%, rgba(46, 46, 46, 0.55) 0%, rgba(46, 46, 46, 0.2) 60%, rgba(46, 46, 46, 0) 100%)",
+        }}
         aria-hidden
       />
       <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">

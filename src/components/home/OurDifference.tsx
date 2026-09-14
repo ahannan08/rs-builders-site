@@ -38,10 +38,7 @@ export function OurDifference() {
               <span className="font-display text-5xl font-light text-accent/40">
                 {item.num}
               </span>
-              <span className="mt-4 text-xs font-semibold uppercase tracking-widest text-muted">
-                —
-              </span>
-              <h3 className="mt-2 font-display text-2xl font-semibold text-primary">
+              <h3 className="mt-5 font-display text-2xl font-semibold text-primary">
                 {item.title}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-primary-light">
