@@ -1,13 +1,33 @@
+import type { Metadata } from "next";
+import { AboutIntro } from "@/components/about/AboutIntro";
+import { DocumentationTransparency } from "@/components/about/DocumentationTransparency";
+import { LocationIntelligence } from "@/components/about/LocationIntelligence";
+import { OurApproach } from "@/components/about/OurApproach";
+import { OurPromise } from "@/components/about/OurPromise";
+import { Reveal } from "@/components/ui/Reveal";
+
+export const metadata: Metadata = {
+  title: "About Us | RS Builders & Developers",
+  description:
+    "Building trust since 2018. RS Builders & Developers identifies strategic land, verifies documentation and develops property opportunities across Telangana.",
+};
+
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
-      <p className="section-label">About us</p>
-      <h1 className="mt-3 font-display text-4xl font-medium text-primary">
-        Our Approach
-      </h1>
-      <p className="mt-4 max-w-2xl text-primary-light">
-        Full about and approach content coming in the next page build.
-      </p>
-    </div>
+    <>
+      <AboutIntro />
+      <Reveal>
+        <OurApproach />
+      </Reveal>
+      <Reveal>
+        <LocationIntelligence />
+      </Reveal>
+      <Reveal>
+        <DocumentationTransparency />
+      </Reveal>
+      <Reveal>
+        <OurPromise />
+      </Reveal>
+    </>
   );
 }
