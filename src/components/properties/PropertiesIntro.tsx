@@ -5,7 +5,7 @@ export function PropertiesIntro() {
     <section className="relative overflow-hidden border-b border-border bg-background">
       <div className="hero-grid absolute inset-0 opacity-60" aria-hidden />
       <div
-        className="absolute -right-24 top-0 h-96 w-96 rounded-full bg-white/[0.04] blur-3xl"
+        className="absolute -right-24 top-0 h-96 w-96 rounded-full bg-primary/[0.04] blur-3xl"
         aria-hidden
       />
       <div className="relative mx-auto max-w-6xl px-6 py-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 lg:px-8 lg:py-20 xl:gap-14">

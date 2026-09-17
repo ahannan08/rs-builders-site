@@ -23,7 +23,7 @@ const pillars = [
 
 export function OurDifference() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <p className="section-label">Our difference</p>
         <h2 className="mt-3 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
@@ -35,7 +35,7 @@ export function OurDifference() {
               key={item.num}
               className="flex flex-col bg-surface p-8 lg:p-10"
             >
-              <span className="font-display text-5xl font-light text-white/35">
+              <span className="font-display text-5xl font-light text-primary/15">
                 {item.num}
               </span>
               <h3 className="mt-5 font-display text-2xl font-semibold text-primary">

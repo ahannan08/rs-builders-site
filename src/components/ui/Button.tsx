@@ -10,9 +10,9 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-button text-primary font-semibold hover:bg-button-hover border border-black shadow-sm shadow-black/40",
+    "bg-button text-on-button font-semibold hover:bg-button-hover border border-black shadow-sm shadow-black/15",
   secondary:
-    "bg-button text-primary border border-border hover:bg-button-hover hover:border-primary-light/35",
+    "border border-primary/25 bg-elevated text-primary hover:border-primary/40 hover:bg-surface",
   ghost: "text-primary hover:text-primary-light underline-offset-4 hover:underline",
 };
 

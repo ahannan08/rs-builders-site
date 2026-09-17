@@ -75,7 +75,7 @@ export function OurApproach() {
                 </div>
 
                 <div>
-                  <span className="font-display text-3xl font-light text-white/40 transition-colors group-hover:text-primary sm:text-4xl">
+                  <span className="font-display text-3xl font-light text-primary/20 transition-colors group-hover:text-primary/40 sm:text-4xl">
                     {step.num}
                   </span>
                   <h3 className="mt-1 font-display text-2xl font-semibold text-primary">

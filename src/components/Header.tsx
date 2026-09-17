@@ -19,7 +19,7 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-nav backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-nav/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="group flex items-center gap-3">
           <span className="relative h-11 w-11 shrink-0">
@@ -29,7 +29,7 @@ export function Header() {
               fill
               sizes="44px"
               priority
-              className="logo-blend object-contain"
+              className="object-contain"
             />
           </span>
           <span className="flex flex-col leading-none">
@@ -68,7 +68,7 @@ export function Header() {
         </nav>
         <Link
           href="/contact"
-          className="hidden rounded-sm border border-white/15 bg-button px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:bg-button-hover md:inline-flex"
+          className="hidden rounded-sm border border-black bg-button px-4 py-2 text-xs font-semibold uppercase tracking-wider text-on-button transition-colors hover:bg-button-hover md:inline-flex"
         >
           Talk to an Expert
         </Link>

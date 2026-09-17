@@ -1,33 +1,34 @@
 @import "tailwindcss";
 
-/* Grey page · black navbar & buttons · white text */
+/* Light grey page · dark text · black buttons */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --background: #525252;
-  --surface: #5c5c5c;
-  --elevated: #666666;
-  --nav-background: #000000;
-  --button: #000000;
-  --button-hover: #141414;
-  --primary: #ffffff;
-  --primary-light: #d4d4d8;
-  --accent: #ffffff;
-  --accent-hover: #e4e4e7;
+  --background: #e4e4e9;
+  --surface: #ececf1;
+  --elevated: #f2f2f6;
+  --nav-background: #e8e8ed;
+  --button: #0a0a0a;
+  --button-hover: #262626;
+  --on-button: #ffffff;
+  --primary: #18181b;
+  --primary-light: #52525b;
+  --accent: #18181b;
+  --accent-hover: #27272a;
   --accent-contrast: #ffffff;
-  --muted: #d4d4d8;
-  --border: #737373;
+  --muted: #71717a;
+  --border: #c4c4cc;
 
-  --iso-road-outer: #27272a;
-  --iso-road: #52525b;
-  --iso-doc-fill: rgba(255, 255, 255, 0.06);
-  --iso-doc-stroke: rgba(255, 255, 255, 0.22);
-  --iso-doc-line: rgba(255, 255, 255, 0.3);
-  --iso-plot-top: #71717a;
-  --iso-plot-inset: #52525b;
-  --iso-wall: #52525b;
-  --iso-wall-dark: #3f3f46;
-  --iso-label: #ffffff;
+  --iso-road-outer: #d4d4d8;
+  --iso-road: #a1a1aa;
+  --iso-doc-fill: rgba(255, 255, 255, 0.85);
+  --iso-doc-stroke: rgba(24, 24, 27, 0.18);
+  --iso-doc-line: rgba(24, 24, 27, 0.28);
+  --iso-plot-top: #d4d4d8;
+  --iso-plot-inset: #a1a1aa;
+  --iso-wall: #71717a;
+  --iso-wall-dark: #52525b;
+  --iso-label: #18181b;
 }
 
 @theme inline {
@@ -37,6 +38,7 @@
   --color-nav: var(--nav-background);
   --color-button: var(--button);
   --color-button-hover: var(--button-hover);
+  --color-on-button: var(--on-button);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
@@ -71,8 +73,8 @@ body {
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--border) 50%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--border) 50%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--border) 55%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -82,9 +84,4 @@ body {
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--primary-light);
-}
-
-.logo-blend {
-  filter: invert(1);
-  mix-blend-mode: screen;
 }

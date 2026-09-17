@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import cusImage from "@/assets/cus.png";
 
 type Testimonial = {
   quote: string;
@@ -79,8 +81,21 @@ export function Testimonials() {
   }, [next, paused]);
 
   return (
-    <section className="py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+    <section className="relative overflow-hidden border-y border-border py-20 lg:py-28">
+      <Image
+        src={cusImage}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/88 to-background/75"
+        aria-hidden
+      />
+
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="min-w-0">
             <p className="section-label">Customer trust</p>
@@ -98,7 +113,7 @@ export function Testimonials() {
             onMouseLeave={() => setPaused(false)}
           >
             <div>
-              <div className="overflow-hidden rounded-sm border border-border bg-surface">
+              <div className="overflow-hidden rounded-sm border border-border bg-surface/95 shadow-sm backdrop-blur-sm">
                 <div
                   className="flex transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(-${index * 100}%)` }}

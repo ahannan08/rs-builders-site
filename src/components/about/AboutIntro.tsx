@@ -27,7 +27,7 @@ export function AboutIntro() {
       <div className="relative mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div className="animate-fade-up">
-            <p className="section-label">About RS Builders & Developers</p>
+            <p className="section-label !text-white/75">About RS Builders & Developers</p>
             <h1 className="mt-4 font-display text-5xl font-medium leading-[1.1] tracking-tight sm:text-6xl">
               Building Trust Since 2018.
             </h1>
@@ -56,7 +56,7 @@ export function AboutIntro() {
                 <dt className="text-xs font-semibold uppercase tracking-widest text-white/70">
                   Ventures
                 </dt>
-                <dd className="mt-2 font-display text-4xl font-semibold text-primary">
+                <dd className="mt-2 font-display text-4xl font-semibold text-white">
                   6+
                 </dd>
               </div>
@@ -64,7 +64,7 @@ export function AboutIntro() {
                 <dt className="text-xs font-semibold uppercase tracking-widest text-white/70">
                   Customers
                 </dt>
-                <dd className="mt-2 font-display text-4xl font-semibold text-primary">
+                <dd className="mt-2 font-display text-4xl font-semibold text-white">
                   500+
                 </dd>
               </div>

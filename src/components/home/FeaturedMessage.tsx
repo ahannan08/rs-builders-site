@@ -24,7 +24,7 @@ export function FeaturedMessage() {
         aria-hidden
       />
       <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
-        <p className="section-label">Featured message</p>
+        <p className="section-label !text-white/75">Featured message</p>
         <h2 className="mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl">
           Property Is More Than Land.
         </h2>
@@ -40,7 +40,7 @@ export function FeaturedMessage() {
         <div className="mt-10">
           <Button
             href="/properties"
-            className="!bg-button !text-primary hover:!bg-button-hover"
+            className="!bg-button !text-on-button hover:!bg-button-hover"
           >
             Find Your Opportunity
           </Button>

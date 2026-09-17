@@ -28,7 +28,7 @@ const ventures: Venture[] = [
 
 const statusStyles: Record<Status, string> = {
   Completed: "border-border bg-background text-primary-light",
-  Ongoing: "border-primary-light/30 bg-white/5 text-primary",
+  Ongoing: "border-primary/25 bg-surface text-primary",
   Upcoming: "border-primary/25 bg-primary/10 text-primary",
 };
 

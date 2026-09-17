@@ -47,22 +47,22 @@ export function OverlayImageCard({
       )}
 
       <div
-        className={`relative flex ${minHeightClass} flex-col justify-end p-6 sm:p-8`}
+        className={`relative flex ${minHeightClass} flex-col justify-end p-6 sm:p-8 ${image ? "text-white" : ""}`}
       >
         {!image && (
-          <p className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-primary-light/80">
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-muted">
             Image coming soon
           </p>
         )}
         {label && (
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-primary-light">
+          <p className={`mb-2 text-xs font-bold uppercase tracking-[0.16em] ${image ? "text-white/80" : "text-primary-light"}`}>
             {label}
           </p>
         )}
-        <h3 className="font-display text-xl font-semibold text-primary sm:text-2xl">
+        <h3 className={`font-display text-xl font-semibold sm:text-2xl ${image ? "" : "text-primary"}`}>
           {title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-primary-light">
+        <p className={`mt-3 text-sm leading-relaxed ${image ? "text-white/85" : "text-primary-light"}`}>
           {description}
         </p>
         {footer && <div className="mt-6">{footer}</div>}

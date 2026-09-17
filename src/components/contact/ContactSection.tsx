@@ -13,7 +13,7 @@ const interests = [
 type Interest = (typeof interests)[number];
 
 const inputBase =
-  "peer w-full rounded-xl border border-border bg-background px-4 py-3.5 text-sm text-primary transition-all placeholder:text-transparent focus:border-primary-light focus:bg-elevated focus:outline-none focus:ring-4 focus:ring-white/10";
+  "peer w-full rounded-xl border border-border bg-background px-4 py-3.5 text-sm text-primary transition-all placeholder:text-transparent focus:border-primary-light focus:bg-elevated focus:outline-none focus:ring-4 focus:ring-black/5";
 
 const floatingLabel =
   "pointer-events-none absolute left-4 top-3.5 text-sm text-muted transition-all peer-focus:-translate-y-6 peer-focus:text-[11px] peer-focus:font-semibold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-primary-light peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-primary-light";
@@ -53,7 +53,7 @@ export function ContactSection() {
                   key={point}
                   className="flex items-start gap-3 text-sm text-primary-light"
                 >
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/10 text-primary">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/8 text-primary">
                     <svg viewBox="0 0 16 16" className="h-3 w-3" aria-hidden>
                       <path
                         d="M3 8.5 6.2 11.5 13 4.5"
@@ -71,7 +71,7 @@ export function ContactSection() {
             </ul>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-black/40">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-black/10">
             <div
               className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent/40 to-transparent"
               aria-hidden
@@ -86,7 +86,7 @@ export function ContactSection() {
 
               {submitted ? (
                 <div className="mt-8 rounded-xl bg-background p-6 text-center">
-                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-primary">
+                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/8 text-primary">
                     <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
                       <path
                         d="M5 13l4 4L19 7"
@@ -201,7 +201,7 @@ export function ContactSection() {
 
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-button px-6 py-3.5 text-sm font-semibold text-primary shadow-lg shadow-black/40 transition-all hover:bg-button-hover"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-button px-6 py-3.5 text-sm font-semibold text-on-button shadow-lg shadow-black/15 transition-all hover:bg-button-hover"
                   >
                     Submit
                     <svg

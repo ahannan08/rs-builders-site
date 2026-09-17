@@ -79,7 +79,7 @@ export function PropertyCategories() {
                 footer={
                   <Link
                     href={category.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-light"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-white/80"
                   >
                     {category.cta}
                     <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
