@@ -28,7 +28,7 @@ const ventures: Venture[] = [
 
 const statusStyles: Record<Status, string> = {
   Completed: "border-border bg-background text-primary-light",
-  Ongoing: "border-accent/40 bg-accent/10 text-accent",
+  Ongoing: "border-primary-light/30 bg-white/5 text-primary",
   Upcoming: "border-primary/25 bg-primary/10 text-primary",
 };
 
@@ -44,7 +44,7 @@ export function OurVentures() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {ventures.map((venture, index) => (
             <Reveal key={venture.name} delay={index * 0.05} className="h-full">
-              <article className="flex h-full flex-col rounded-sm border border-border bg-background p-7 transition-colors duration-300 hover:border-accent/35">
+              <article className="flex h-full flex-col rounded-sm border border-border bg-background p-7 transition-colors duration-300 hover:border-primary-light/25">
                 <span
                   className={`self-start rounded-sm border px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${statusStyles[venture.status]}`}
                 >
@@ -65,7 +65,7 @@ export function OurVentures() {
                 </dl>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-accent"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary"
                 >
                   View Details
                   <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>

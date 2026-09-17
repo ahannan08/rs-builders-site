@@ -34,7 +34,7 @@ export function AboutIntro() {
             <p className="mt-6 leading-relaxed text-white/75">
               RS Builders & Developers was founded with a simple belief:
             </p>
-            <p className="mt-4 border-l-2 border-accent pl-5 font-display text-2xl leading-snug text-white sm:text-3xl">
+            <p className="mt-4 border-l-2 border-primary-light pl-5 font-display text-2xl leading-snug text-white sm:text-3xl">
               The right property begins with the right location, the right
               documentation and the right people behind it.
             </p>
@@ -56,7 +56,7 @@ export function AboutIntro() {
                 <dt className="text-xs font-semibold uppercase tracking-widest text-white/70">
                   Ventures
                 </dt>
-                <dd className="mt-2 font-display text-4xl font-semibold text-accent">
+                <dd className="mt-2 font-display text-4xl font-semibold text-primary">
                   6+
                 </dd>
               </div>
@@ -64,7 +64,7 @@ export function AboutIntro() {
                 <dt className="text-xs font-semibold uppercase tracking-widest text-white/70">
                   Customers
                 </dt>
-                <dd className="mt-2 font-display text-4xl font-semibold text-accent">
+                <dd className="mt-2 font-display text-4xl font-semibold text-primary">
                   500+
                 </dd>
               </div>

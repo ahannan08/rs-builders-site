@@ -43,7 +43,7 @@ export function DocumentationTransparency() {
               >
                 <svg
                   viewBox="0 0 16 16"
-                  className="mt-0.5 h-4 w-4 shrink-0 text-accent"
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary-light"
                   aria-hidden
                 >
                   <path
@@ -61,8 +61,8 @@ export function DocumentationTransparency() {
           </ul>
         </div>
 
-        <div className="mt-10 rounded-sm border-l-2 border-accent bg-surface px-8 py-8">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+        <div className="mt-10 rounded-sm border-l-2 border-primary-light bg-surface px-8 py-8">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-light">
             Our principle
           </p>
           <p className="mt-3 font-display text-2xl leading-snug text-primary sm:text-3xl">

@@ -26,7 +26,7 @@ export function OurPromise() {
               key={promise}
               className="flex h-full flex-col justify-between bg-background p-6 lg:p-7"
             >
-              <span className="font-display text-3xl font-light text-accent/40">
+              <span className="font-display text-3xl font-light text-white/35">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-6 font-display text-lg font-semibold leading-snug text-primary">

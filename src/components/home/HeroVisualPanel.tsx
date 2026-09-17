@@ -17,7 +17,7 @@ const HeroIsometricLazy = dynamic(
 
 export function HeroVisualPanel() {
   return (
-    <div className="mt-12 lg:mt-0">
+    <div className="mt-10 lg:mt-0 lg:justify-self-end">
       <HeroIsometricLazy />
     </div>
   );

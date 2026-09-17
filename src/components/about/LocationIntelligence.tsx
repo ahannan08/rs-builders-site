@@ -61,7 +61,7 @@ export function LocationIntelligence() {
         </div>
 
         <div className="mt-14 rounded-sm border border-border bg-elevated px-8 py-10 sm:px-12">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-light">
             The idea is simple
           </p>
           <p className="mt-4 font-display text-2xl leading-snug text-primary sm:text-3xl">
@@ -69,7 +69,7 @@ export function LocationIntelligence() {
             <br />
             Identify the opportunity early.
             <br />
-            <span className="text-accent">Build for the future.</span>
+            <span className="text-primary">Build for the future.</span>
           </p>
         </div>
       </div>

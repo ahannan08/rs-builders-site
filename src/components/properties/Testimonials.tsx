@@ -43,7 +43,7 @@ function Stars({ rating }: { rating: number }) {
         <svg
           key={i}
           viewBox="0 0 20 20"
-          className={`h-4 w-4 ${i < rating ? "text-accent" : "text-muted/40"}`}
+          className={`h-4 w-4 ${i < rating ? "text-primary" : "text-muted/40"}`}
           aria-hidden
         >
           <path
@@ -131,7 +131,7 @@ export function Testimonials() {
                       aria-label={`Show testimonial ${i + 1}`}
                       aria-current={i === index}
                       className={`h-1.5 rounded-full transition-all ${
-                        i === index ? "w-6 bg-accent" : "w-1.5 bg-muted"
+                        i === index ? "w-6 bg-primary" : "w-1.5 bg-muted"
                       }`}
                     />
                   ))}
@@ -141,7 +141,7 @@ export function Testimonials() {
                     type="button"
                     onClick={prev}
                     aria-label="Previous testimonial"
-                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-accent/40 hover:text-accent"
+                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-primary-light/30 hover:text-primary"
                   >
                     <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
                       <path
@@ -158,7 +158,7 @@ export function Testimonials() {
                     type="button"
                     onClick={next}
                     aria-label="Next testimonial"
-                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-accent/40 hover:text-accent"
+                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-primary-light/30 hover:text-primary"
                   >
                     <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
                       <path

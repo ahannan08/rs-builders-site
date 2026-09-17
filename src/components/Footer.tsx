@@ -151,14 +151,14 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-elevated text-primary">
+    <footer className="border-t border-white/10 bg-nav text-primary">
       <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-10">
           <div>
             <p className="font-display text-2xl font-semibold leading-tight">
               RS Builders & Developers
             </p>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary-light">
               Dare to Dream
             </p>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-light">
@@ -175,7 +175,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-primary-light transition-colors hover:text-accent"
+                    className="text-primary-light transition-colors hover:text-primary"
                   >
                     {item.label}
                   </Link>
@@ -193,7 +193,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-primary-light transition-colors hover:text-accent"
+                    className="text-primary-light transition-colors hover:text-primary"
                   >
                     {item.label}
                   </Link>
@@ -217,9 +217,9 @@ export function Footer() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="inline-flex items-center gap-2.5 text-primary-light transition-colors hover:text-accent"
+                    className="inline-flex items-center gap-2.5 text-primary-light transition-colors hover:text-primary"
                   >
-                    <span className="text-accent">{item.icon}</span>
+                    <span className="text-primary">{item.icon}</span>
                     {item.label}
                   </a>
                 </li>
@@ -228,7 +228,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-primary-light sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} RS Builders & Developers. All Rights
             Reserved.
@@ -236,14 +236,14 @@ export function Footer() {
           <p>
             <a
               href={contact.phoneHref}
-              className="transition-colors hover:text-accent"
+              className="transition-colors hover:text-primary"
             >
               {contact.phone}
             </a>
             <span className="mx-2 text-border">|</span>
             <a
               href={`mailto:${contact.email}`}
-              className="transition-colors hover:text-accent"
+              className="transition-colors hover:text-primary"
             >
               {contact.email}
             </a>

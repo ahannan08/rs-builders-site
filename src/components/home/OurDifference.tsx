@@ -35,7 +35,7 @@ export function OurDifference() {
               key={item.num}
               className="flex flex-col bg-surface p-8 lg:p-10"
             >
-              <span className="font-display text-5xl font-light text-accent/40">
+              <span className="font-display text-5xl font-light text-white/35">
                 {item.num}
               </span>
               <h3 className="mt-5 font-display text-2xl font-semibold text-primary">
