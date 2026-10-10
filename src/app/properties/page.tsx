@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { OurVentures } from "@/components/properties/OurVentures";
 import { PropertiesIntro } from "@/components/properties/PropertiesIntro";
-import { PropertyCategories } from "@/components/properties/PropertyCategories";
 import { Testimonials } from "@/components/properties/Testimonials";
 
 export const metadata: Metadata = {
@@ -15,7 +14,8 @@ export default function PropertiesPage() {
   return (
     <>
       <PropertiesIntro />
-      <PropertyCategories />
+      {/* Property category cards — hidden until portfolio links are ready */}
+      {/* <PropertyCategories /> */}
       <OurVentures />
       <Testimonials />
       <ContactSection />

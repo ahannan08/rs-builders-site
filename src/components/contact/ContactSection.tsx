@@ -17,7 +17,7 @@ const inputBase =
   "peer w-full rounded-xl border border-border bg-background px-4 py-3.5 text-sm text-primary transition-all placeholder:text-transparent focus:border-primary-light focus:bg-elevated focus:outline-none focus:ring-4 focus:ring-black/5";
 
 const floatingLabel =
-  "pointer-events-none absolute left-4 top-3.5 text-sm text-muted transition-all peer-focus:-translate-y-6 peer-focus:text-[11px] peer-focus:font-semibold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-primary-light peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-primary-light";
+  "pointer-events-none absolute left-4 top-3.5 z-10 text-sm text-muted transition-all duration-200 peer-focus:left-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:bg-surface peer-focus:px-1.5 peer-focus:text-[11px] peer-focus:font-semibold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-primary-light peer-[:not(:placeholder-shown)]:left-3 peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:-translate-y-1/2 peer-[:not(:placeholder-shown)]:bg-surface peer-[:not(:placeholder-shown)]:px-1.5 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-primary-light";
 
 export function ContactSection() {
   const [interest, setInterest] = useState<Interest | null>(null);
@@ -167,7 +167,7 @@ export function ContactSection() {
                     <legend className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-primary-light">
                       Property Interest
                     </legend>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
                       {interests.map((option) => {
                         const selected = interest === option;
                         return (
@@ -176,7 +176,7 @@ export function ContactSection() {
                             type="button"
                             onClick={() => setInterest(option)}
                             aria-pressed={selected}
-                            className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                            className={`w-full rounded-full border px-3 py-2.5 text-center text-sm font-medium transition-all ${
                               selected
                                 ? "border-primary bg-elevated text-primary shadow-sm"
                                 : "border-border bg-background text-primary-light hover:border-primary-light/30 hover:text-primary"
