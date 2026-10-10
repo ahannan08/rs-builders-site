@@ -24,7 +24,7 @@ export function LocationIntelligence() {
     <section className="border-y border-border bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <div className="lg:sticky lg:top-28">
+          <Reveal className="lg:sticky lg:top-28">
             <p className="section-label">Location intelligence</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
               We Think Beyond Today&apos;s Map.
@@ -35,7 +35,7 @@ export function LocationIntelligence() {
             <p className="mt-4 leading-relaxed text-primary-light">
               We look for areas influenced by:
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid gap-5 sm:grid-cols-2">
             {pillars.map((pillar, index) => (
@@ -60,7 +60,7 @@ export function LocationIntelligence() {
           </div>
         </div>
 
-        <div className="mt-14 rounded-sm border border-border bg-elevated px-8 py-10 sm:px-12">
+        <Reveal className="mt-14 rounded-sm border border-border bg-elevated px-8 py-10 sm:px-12">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-light">
             The idea is simple
           </p>
@@ -71,7 +71,7 @@ export function LocationIntelligence() {
             <br />
             <span className="text-primary">Build for the future.</span>
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

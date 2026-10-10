@@ -4,7 +4,6 @@ import { DocumentationTransparency } from "@/components/about/DocumentationTrans
 import { LocationIntelligence } from "@/components/about/LocationIntelligence";
 import { OurApproach } from "@/components/about/OurApproach";
 import { OurPromise } from "@/components/about/OurPromise";
-import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "About Us | RS Builders & Developers",
@@ -16,18 +15,10 @@ export default function AboutPage() {
   return (
     <>
       <AboutIntro />
-      <Reveal>
-        <OurApproach />
-      </Reveal>
-      <Reveal>
-        <LocationIntelligence />
-      </Reveal>
-      <Reveal>
-        <DocumentationTransparency />
-      </Reveal>
-      <Reveal>
-        <OurPromise />
-      </Reveal>
+      <OurApproach />
+      <LocationIntelligence />
+      <DocumentationTransparency />
+      <OurPromise />
     </>
   );
 }

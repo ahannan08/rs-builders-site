@@ -1,3 +1,5 @@
+import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
+
 const stats = [
   { value: "8+", label: "Years", sub: "Experience" },
   { value: "8+", label: "Ventures", sub: null },
@@ -9,13 +11,15 @@ export function TrustBar() {
   return (
     <section className="border-y border-border bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8">
-        <p className="text-center font-display text-xl text-primary sm:text-2xl">
-          Built on Trust.{" "}
-          <span className="text-primary-light">Driven by Opportunity.</span>
-        </p>
-        <div className="mt-12 grid grid-cols-2 gap-8 border-t border-border pt-12 lg:grid-cols-4">
+        <Reveal>
+          <p className="text-center font-display text-xl text-primary sm:text-2xl">
+            Built on Trust.{" "}
+            <span className="text-primary-light">Driven by Opportunity.</span>
+          </p>
+        </Reveal>
+        <RevealStagger className="mt-12 grid grid-cols-2 gap-8 border-t border-border pt-12 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center lg:text-left">
+            <RevealItem key={stat.label} className="text-center lg:text-left">
               <p className="font-display text-4xl font-semibold text-primary sm:text-5xl">
                 {stat.value}
               </p>
@@ -27,9 +31,9 @@ export function TrustBar() {
                   {stat.sub}
                 </p>
               )}
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   );

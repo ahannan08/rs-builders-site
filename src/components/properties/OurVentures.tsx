@@ -36,10 +36,12 @@ export function OurVentures() {
   return (
     <section className="border-y border-border bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <p className="section-label">Our ventures</p>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
-          A Growing Portfolio Across Telangana.
-        </h2>
+        <Reveal>
+          <p className="section-label">Our ventures</p>
+          <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
+            A Growing Portfolio Across Telangana.
+          </h2>
+        </Reveal>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {ventures.map((venture, index) => (

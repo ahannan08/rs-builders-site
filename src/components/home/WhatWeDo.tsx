@@ -51,17 +51,19 @@ export function WhatWeDo() {
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="section-label">What we do</p>
-          <h2 className="mt-3 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
-            Real Estate, Built Around Your Future.
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-primary-light">
-            From finding the right land to creating residential and commercial
-            opportunities, RS Builders & Developers works across multiple
-            segments of real estate.
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-2xl">
+            <p className="section-label">What we do</p>
+            <h2 className="mt-3 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
+              Real Estate, Built Around Your Future.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-primary-light">
+              From finding the right land to creating residential and commercial
+              opportunities, RS Builders & Developers works across multiple
+              segments of real estate.
+            </p>
+          </div>
+        </Reveal>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.08} className="h-full">
@@ -74,9 +76,9 @@ export function WhatWeDo() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <Button href="/properties">View Our Portfolio</Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

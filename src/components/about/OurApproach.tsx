@@ -53,10 +53,12 @@ export function OurApproach() {
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <p className="section-label">Our approach</p>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
-          From Land to Opportunity.
-        </h2>
+        <Reveal>
+          <p className="section-label">Our approach</p>
+          <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
+            From Land to Opportunity.
+          </h2>
+        </Reveal>
 
         <ol className="mt-14 border-t border-border">
           {steps.map((step, index) => (

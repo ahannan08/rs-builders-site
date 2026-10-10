@@ -1,6 +1,7 @@
 import Image from "next/image";
 import plotAerial from "@/assets/plot.png";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function FeaturedMessage() {
   return (
@@ -23,7 +24,7 @@ export function FeaturedMessage() {
         }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
+      <Reveal className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
         <p className="section-label !text-white/75">Featured message</p>
         <h2 className="mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl">
           Property Is More Than Land.
@@ -45,7 +46,7 @@ export function FeaturedMessage() {
             Find Your Opportunity
           </Button>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

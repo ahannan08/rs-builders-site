@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Reveal } from "@/components/ui/Reveal";
 
 const interests = [
   "Residential",
@@ -32,6 +33,7 @@ export function ContactSection() {
     <section className="border-t border-border bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1fr] lg:items-start lg:gap-16">
+          <Reveal>
           <div>
             <p className="section-label">Ready to find your next property?</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
@@ -70,7 +72,9 @@ export function ContactSection() {
               ))}
             </ul>
           </div>
+          </Reveal>
 
+          <Reveal delay={0.1}>
           <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-xl shadow-black/10">
             <div
               className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent/40 to-transparent"
@@ -228,6 +232,7 @@ export function ContactSection() {
               )}
             </div>
           </div>
+          </Reveal>
         </div>
       </div>
     </section>

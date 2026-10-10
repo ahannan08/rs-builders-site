@@ -1,5 +1,6 @@
 import Image from "next/image";
 import aboutBanner from "@/assets/about.png";
+import { RevealOnLoad } from "@/components/ui/Reveal";
 
 export function AboutIntro() {
   return (
@@ -26,7 +27,7 @@ export function AboutIntro() {
 
       <div className="relative mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <div className="animate-fade-up">
+          <RevealOnLoad>
             <p className="section-label !text-white/75">About RS Builders & Developers</p>
             <h1 className="mt-4 font-display text-5xl font-medium leading-[1.1] tracking-tight sm:text-6xl">
               Building Trust Since 2018.
@@ -38,8 +39,9 @@ export function AboutIntro() {
               The right property begins with the right location, the right
               documentation and the right people behind it.
             </p>
-          </div>
+          </RevealOnLoad>
 
+          <RevealOnLoad delay={0.12}>
           <div className="lg:pt-6">
             <p className="leading-relaxed text-white/80">
               Since 2018, we have worked across Telangana to identify and
@@ -70,6 +72,7 @@ export function AboutIntro() {
               </div>
             </dl>
           </div>
+          </RevealOnLoad>
         </div>
       </div>
     </section>

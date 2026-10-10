@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import cusImage from "@/assets/cus.png";
+import { Reveal } from "@/components/ui/Reveal";
 
 type Testimonial = {
   quote: string;
@@ -97,7 +98,7 @@ export function Testimonials() {
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div className="min-w-0">
+          <Reveal className="min-w-0">
             <p className="section-label">Customer trust</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
               500+ Customers. 50+ Stories.
@@ -105,8 +106,9 @@ export function Testimonials() {
             <p className="mt-6 leading-relaxed text-primary-light">
               Real estate is built on relationships.
             </p>
-          </div>
+          </Reveal>
 
+          <Reveal delay={0.1} className="relative min-w-0">
           <div
             className="relative min-w-0"
             onMouseEnter={() => setPaused(true)}
@@ -190,6 +192,7 @@ export function Testimonials() {
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { HeroBackgroundVideo } from "@/components/home/HeroBackgroundVideo";
 import { Button } from "@/components/ui/Button";
+import { RevealOnLoad } from "@/components/ui/Reveal";
 
 export function Hero() {
   return (
@@ -13,7 +14,7 @@ export function Hero() {
       />
 
       <div className="relative z-[2] mx-auto flex min-h-svh max-w-4xl flex-col items-center justify-center px-6 py-16 text-center text-white lg:px-8 lg:py-20">
-        <div className="animate-fade-up">
+        <RevealOnLoad>
           <p className="section-label mb-4 !text-white/75">Land & Development</p>
           <h1 className="font-display text-5xl font-medium leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
             Dare to Dream.
@@ -39,7 +40,7 @@ export function Hero() {
               Talk to an Expert
             </Button>
           </div>
-        </div>
+        </RevealOnLoad>
       </div>
     </section>
   );

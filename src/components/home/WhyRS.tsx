@@ -1,6 +1,7 @@
 import Image from "next/image";
 import wowImage from "@/assets/wow.png";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 
 const locationFactors = [
   "ORR connectivity",
@@ -39,7 +40,8 @@ export function WhyRS() {
 
       <div className="relative mx-auto max-w-6xl px-6 text-white lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <div>
+          <Reveal>
+            <div>
             <p className="section-label !text-white/75">Why RS Builders & Developers?</p>
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl">
               We Don&apos;t Just Look at Where a Property Is.
@@ -47,8 +49,10 @@ export function WhyRS() {
             <p className="mt-3 font-display text-3xl font-medium leading-tight text-white/85 sm:text-4xl">
               We Look at Where the Location Is Going.
             </p>
-          </div>
+            </div>
+          </Reveal>
 
+          <Reveal delay={0.08}>
           <div className="lg:pt-2">
             <p className="leading-relaxed text-white/85">
               A property&apos;s potential is influenced by more than its present
@@ -66,8 +70,10 @@ export function WhyRS() {
               We evaluate locations based on factors such as:
             </p>
           </div>
+          </Reveal>
         </div>
 
+        <Reveal delay={0.05}>
         <div className="mt-12 rounded-sm border border-white/15 bg-black/35 p-6 backdrop-blur-sm sm:p-8 lg:mt-14">
           <ul className="grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
             {locationFactors.map((factor) => (
@@ -84,10 +90,11 @@ export function WhyRS() {
             ))}
           </ul>
         </div>
+        </Reveal>
 
-        <div className="mt-10">
+        <Reveal delay={0.1} className="mt-10">
           <Button href="/about">Discover Our Approach</Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
