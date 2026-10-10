@@ -85,3 +85,127 @@ body {
   font-weight: 700;
   color: var(--primary-light);
 }
+
+/* ---------- Location intelligence map ---------- */
+.leaflet-container {
+  background: #0f1115;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+/* Brand "silver" treatment for satellite imagery */
+.map-satellite .leaflet-tile-pane {
+  filter: saturate(0.55) brightness(0.82) contrast(1.08);
+}
+
+.map-silver .leaflet-tile-pane {
+  filter: saturate(0.85) contrast(1.02);
+}
+
+.map-pin {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.map-pin__dot {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  background: var(--pin);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 0 14px var(--pin);
+  transform: translate(-50%, -50%);
+}
+
+.map-pin__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1.5px solid var(--pin);
+  opacity: 0;
+}
+
+.map-pin--active .map-pin__ring {
+  animation: map-pin-pulse 2s ease-out infinite;
+}
+
+.map-pin--dim {
+  opacity: 0.22;
+  transform: scale(0.8);
+}
+
+@keyframes map-pin-pulse {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-pin--active .map-pin__ring {
+    animation: none;
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #111318;
+  color: #f4f4f5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px;
+  line-height: 1.45;
+}
+
+.leaflet-popup-close-button {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.map-popup__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.map-popup__title {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.map-popup__text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.leaflet-control-zoom a {
+  background: #111318 !important;
+  color: #f4f4f5 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(0, 0, 0, 0.55) !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 9px !important;
+}
+
+.leaflet-control-attribution a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
