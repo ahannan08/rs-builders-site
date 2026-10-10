@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AboutIntro } from "@/components/about/AboutIntro";
 import { DocumentationTransparency } from "@/components/about/DocumentationTransparency";
 import { LocationIntelligence } from "@/components/about/LocationIntelligence";
-import { OurApproach } from "@/components/about/OurApproach";
+// import { OurApproach } from "@/components/about/OurApproach";
 import { OurPromise } from "@/components/about/OurPromise";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function AboutPage() {
       <LocationIntelligence />
       <OurPromise />
       <DocumentationTransparency />
-      <OurApproach />
+      {/* <OurApproach /> */}
     </>
   );
 }

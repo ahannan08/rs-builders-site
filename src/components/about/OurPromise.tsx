@@ -32,29 +32,6 @@ const promises: PromiseItem[] = [
     ),
   },
   {
-    title: "Professional Due Diligence",
-    image: "/profes.png",
-    objectPosition: "50% 45%",
-    icon: (
-      <svg viewBox="0 0 24 24" className={iconClass} aria-hidden>
-        <path
-          d="M6 4h8l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M14 4v4h4M8 13h6M8 17h4"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
     title: "Transparent Processes",
     image: "/law.png",
     objectPosition: "50% 40%",
@@ -160,8 +137,8 @@ function PromiseCard({
 
 export function OurPromise() {
   return (
-    <section className="border-t border-border bg-surface py-20 lg:py-28">
-      <div className="mx-auto max-w-[88rem] px-6 lg:px-8">
+    <section className="bg-surface pb-20 pt-0 lg:pb-28">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal>
           <p className="section-label">Our promise</p>
           <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
@@ -173,7 +150,7 @@ export function OurPromise() {
         </Reveal>
 
         <RevealStagger
-          className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 xl:gap-5"
+          className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-4"
           stagger={0.08}
         >
           {promises.map((promise) => (
