@@ -64,13 +64,13 @@ export function OurApproach() {
           {steps.map((step, index) => (
             <Reveal key={step.num} delay={index * 0.06}>
               <li className="group grid gap-5 border-b border-border py-8 sm:grid-cols-[6rem_11rem_1fr] sm:items-center sm:gap-8">
-                <div className="relative flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border bg-surface">
+                <div className="relative h-24 w-24 shrink-0 sm:h-28 sm:w-28">
                   <Image
                     src={step.icon}
                     alt=""
                     fill
-                    sizes="96px"
-                    className="scale-125 object-cover"
+                    sizes="112px"
+                    className="object-contain mix-blend-multiply"
                     style={{ objectPosition: step.iconPosition ?? "center" }}
                     aria-hidden
                   />

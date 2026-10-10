@@ -15,10 +15,10 @@ export default function AboutPage() {
   return (
     <>
       <AboutIntro />
-      <OurApproach />
       <LocationIntelligence />
-      <DocumentationTransparency />
       <OurPromise />
+      <DocumentationTransparency />
+      <OurApproach />
     </>
   );
 }

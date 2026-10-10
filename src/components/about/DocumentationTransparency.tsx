@@ -16,54 +16,34 @@ export function DocumentationTransparency() {
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <Reveal>
-            <div>
-              <p className="section-label">Documentation & transparency</p>
-              <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
-                Your Confidence Starts With Clear Documentation.
-              </h2>
-            </div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <div className="lg:pt-2">
-              <p className="leading-relaxed text-primary-light">
-                Real estate is a major decision. We believe customers deserve
-                clarity before they commit.
-              </p>
-              <p className="mt-4 leading-relaxed text-primary-light">
-                Our property evaluation process focuses on appropriate
-                documentation and professional verification, including relevant
-                checks such as:
-              </p>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal>
+          <p className="section-label">Documentation & transparency</p>
+        </Reveal>
 
         <Reveal delay={0.05}>
-          <div className="mt-12 rounded-sm border border-border bg-surface p-6 sm:p-8 lg:mt-14">
-            <ul className="grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 rounded-sm border border-border bg-surface p-8 sm:p-10 lg:mt-12">
+            <ul className="grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
               {checks.map((check) => (
-                  <li
-                    key={check}
-                    className="flex items-start gap-2.5 text-sm leading-relaxed text-primary-light"
+                <li
+                  key={check}
+                  className="flex items-start gap-3 text-base font-medium leading-snug text-primary sm:text-lg"
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    className="mt-1 h-5 w-5 shrink-0 text-primary"
+                    aria-hidden
                   >
-                    <svg
-                      viewBox="0 0 16 16"
-                      className="mt-0.5 h-4 w-4 shrink-0 text-primary-light"
-                      aria-hidden
-                    >
-                      <path
-                        d="M3 8.5 L6.2 11.5 L13 4.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span>{check}</span>
-                  </li>
+                    <path
+                      d="M3 8.5 L6.2 11.5 L13 4.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span>{check}</span>
+                </li>
               ))}
             </ul>
           </div>
