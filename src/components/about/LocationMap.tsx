@@ -49,7 +49,7 @@ function FlyTo({ target }: { target: Hotspot | null }) {
 
 export default function LocationMap() {
   const [filter, setFilter] = useState<Filter>("all");
-  const [base, setBase] = useState<BaseLayer>("satellite");
+  const [base, setBase] = useState<BaseLayer>("silver");
   const [selected, setSelected] = useState<Hotspot | null>(null);
 
   const colorFor = useMemo(() => {

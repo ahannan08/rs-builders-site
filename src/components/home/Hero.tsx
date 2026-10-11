@@ -1,11 +1,17 @@
-import { HeroBackgroundVideoMount } from "@/components/home/HeroBackgroundVideoMount";
+import { HeroBackgroundVideo } from "@/components/home/HeroBackgroundVideo";
 import { Button } from "@/components/ui/Button";
 import { RevealOnLoad } from "@/components/ui/Reveal";
 
 export function Hero() {
   return (
     <section className="relative min-h-svh overflow-hidden border-b border-border">
-      <HeroBackgroundVideoMount />
+      <link
+        rel="preload"
+        href="/rs_banner.mp4"
+        as="video"
+        type="video/mp4"
+      />
+      <HeroBackgroundVideo />
 
       <div className="absolute inset-0 z-[1] bg-black/55" aria-hidden />
       <div
