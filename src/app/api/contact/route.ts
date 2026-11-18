@@ -60,7 +60,8 @@ export async function POST(request: Request) {
   }
 
   const to =
-    process.env.CONTACT_TO_EMAIL?.trim() || "info@rsbuilders.in";
+    process.env.CONTACT_TO_EMAIL?.trim() ||
+    "rsbuildersandevelopers007@gmail.com";
   const from =
     process.env.CONTACT_FROM_EMAIL?.trim() || "onboarding@resend.dev";
 
