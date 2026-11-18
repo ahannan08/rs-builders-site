@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { AboutIntro } from "@/components/about/AboutIntro";
-import { DocumentationTransparency } from "@/components/about/DocumentationTransparency";
 import { LocationIntelligence } from "@/components/about/LocationIntelligence";
 // import { OurApproach } from "@/components/about/OurApproach";
 import { OurPromise } from "@/components/about/OurPromise";
@@ -17,7 +16,6 @@ export default function AboutPage() {
       <AboutIntro />
       <LocationIntelligence />
       <OurPromise />
-      <DocumentationTransparency />
       {/* <OurApproach /> */}
     </>
   );

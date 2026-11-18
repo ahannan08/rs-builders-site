@@ -1,19 +1,16 @@
 import Image from "next/image";
-import aboutBanner from "@/assets/about.png";
 import { RevealOnLoad } from "@/components/ui/Reveal";
 
 export function AboutIntro() {
   return (
     <section className="relative overflow-hidden border-b border-border text-white">
       <Image
-        src={aboutBanner}
-        alt=""
+        src="/about_banner.png"
+        alt="Aerial view of Hyderabad and Telangana growth corridors"
         fill
         priority
         sizes="100vw"
-        placeholder="blur"
         className="object-cover object-center"
-        aria-hidden
       />
       <div className="absolute inset-0 bg-black/55" aria-hidden />
       <div

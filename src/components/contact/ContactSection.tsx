@@ -16,17 +16,67 @@ type Interest = (typeof interests)[number];
 const inputBase =
   "peer w-full rounded-xl border border-border bg-background px-4 py-3.5 text-sm text-primary transition-all placeholder:text-transparent focus:border-primary-light focus:bg-elevated focus:outline-none focus:ring-4 focus:ring-black/5";
 
-const floatingLabel =
+const floatingLabelInput =
   "pointer-events-none absolute left-4 top-3.5 z-10 text-sm text-muted transition-all duration-200 peer-focus:left-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:bg-surface peer-focus:px-1.5 peer-focus:text-[11px] peer-focus:font-semibold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-primary-light peer-[:not(:placeholder-shown)]:left-3 peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:-translate-y-1/2 peer-[:not(:placeholder-shown)]:bg-surface peer-[:not(:placeholder-shown)]:px-1.5 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-primary-light";
+
+const floatingLabelTextarea =
+  "pointer-events-none absolute left-4 top-3.5 z-10 text-sm text-muted transition-all duration-200 peer-focus:left-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:bg-surface peer-focus:px-1.5 peer-focus:text-[11px] peer-focus:font-semibold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-primary-light peer-[:not(:placeholder-shown)]:left-3 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:-translate-y-0 peer-[:not(:placeholder-shown)]:bg-surface peer-[:not(:placeholder-shown)]:px-1.5 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-primary-light";
 
 export function ContactSection() {
   const [interest, setInterest] = useState<Interest | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [interestError, setInterestError] = useState(false);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // TODO: send to an email service (Resend / Formspree) once credentials are available.
-    setSubmitted(true);
+    setError(null);
+
+    if (!interest) {
+      setInterestError(true);
+      return;
+    }
+    setInterestError(false);
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      interest,
+      message: String(data.get("message") ?? "").trim(),
+    };
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const json = (await res.json().catch(() => ({}))) as { error?: string };
+
+      if (!res.ok) {
+        setError(
+          json.error ??
+            "Something went wrong. Please try again or call us directly.",
+        );
+        return;
+      }
+
+      setSubmitted(true);
+      form.reset();
+      setInterest(null);
+    } catch {
+      setError(
+        "Could not reach the server. Check your connection and try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -110,7 +160,10 @@ export function ContactSection() {
                   </p>
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setError(null);
+                    }}
                     className="mt-5 text-sm font-semibold text-primary transition-colors hover:text-primary-hover"
                   >
                     Send another message
@@ -118,33 +171,44 @@ export function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                  {error ? (
+                    <p
+                      role="alert"
+                      className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-primary"
+                    >
+                      {error}
+                    </p>
+                  ) : null}
+
                   <div className="relative">
                     <input
                       id="name"
                       name="name"
                       type="text"
                       required
+                      disabled={loading}
                       autoComplete="name"
                       placeholder="Name"
                       className={inputBase}
                     />
-                    <label htmlFor="name" className={floatingLabel}>
+                    <label htmlFor="name" className={floatingLabelInput}>
                       Name
                     </label>
                   </div>
 
-                  <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="grid gap-6 sm:grid-cols-2 sm:items-start">
                     <div className="relative">
                       <input
                         id="phone"
                         name="phone"
                         type="tel"
                         required
+                        disabled={loading}
                         autoComplete="tel"
                         placeholder="Phone Number"
                         className={inputBase}
                       />
-                      <label htmlFor="phone" className={floatingLabel}>
+                      <label htmlFor="phone" className={floatingLabelInput}>
                         Phone Number
                       </label>
                     </div>
@@ -153,11 +217,12 @@ export function ContactSection() {
                         id="email"
                         name="email"
                         type="email"
+                        disabled={loading}
                         autoComplete="email"
                         placeholder="Email"
                         className={inputBase}
                       />
-                      <label htmlFor="email" className={floatingLabel}>
+                      <label htmlFor="email" className={floatingLabelInput}>
                         Email
                       </label>
                     </div>
@@ -167,14 +232,24 @@ export function ContactSection() {
                     <legend className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-primary-light">
                       Property Interest
                     </legend>
-                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+                    <div
+                      className={`grid grid-cols-2 gap-2 sm:grid-cols-3 ${
+                        interestError
+                          ? "rounded-xl ring-2 ring-red-500/40 ring-offset-2 ring-offset-surface"
+                          : ""
+                      }`}
+                    >
                       {interests.map((option) => {
                         const selected = interest === option;
                         return (
                           <button
                             key={option}
                             type="button"
-                            onClick={() => setInterest(option)}
+                            disabled={loading}
+                            onClick={() => {
+                              setInterest(option);
+                              setInterestError(false);
+                            }}
                             aria-pressed={selected}
                             className={`w-full rounded-full border px-3 py-2.5 text-center text-sm font-medium transition-all ${
                               selected
@@ -187,6 +262,11 @@ export function ContactSection() {
                         );
                       })}
                     </div>
+                    {interestError ? (
+                      <p className="mt-2 text-xs text-red-600">
+                        Please select a property interest.
+                      </p>
+                    ) : null}
                     <input type="hidden" name="interest" value={interest ?? ""} />
                   </fieldset>
 
@@ -195,33 +275,37 @@ export function ContactSection() {
                       id="message"
                       name="message"
                       rows={4}
+                      disabled={loading}
                       placeholder="Message"
-                      className={`${inputBase} resize-y`}
+                      className={`${inputBase} resize-y pt-3.5`}
                     />
-                    <label htmlFor="message" className={floatingLabel}>
+                    <label htmlFor="message" className={floatingLabelTextarea}>
                       Message
                     </label>
                   </div>
 
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-button px-6 py-3.5 text-sm font-semibold text-on-button shadow-lg shadow-black/15 transition-all hover:bg-button-hover"
+                    disabled={loading}
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-button px-6 py-3.5 text-sm font-semibold text-on-button shadow-lg shadow-black/15 transition-all hover:bg-button-hover disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Submit
-                    <svg
-                      viewBox="0 0 16 16"
-                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                      aria-hidden
-                    >
-                      <path
-                        d="M3 8h9m0 0-3.5-3.5M12 8l-3.5 3.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    {loading ? "Sending…" : "Submit"}
+                    {!loading ? (
+                      <svg
+                        viewBox="0 0 16 16"
+                        className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                        aria-hidden
+                      >
+                        <path
+                          d="M3 8h9m0 0-3.5-3.5M12 8l-3.5 3.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    ) : null}
                   </button>
 
                   <p className="text-xs leading-relaxed text-muted">
