@@ -1,3 +1,4 @@
+import { ContactSection } from "@/components/contact/ContactSection";
 import { Hero } from "@/components/home/Hero";
 import { OurDifference } from "@/components/home/OurDifference";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
@@ -10,6 +11,7 @@ export default function Home() {
       <OurDifference />
       <WhatWeDo />
       <WhyRS />
+      <ContactSection />
     </>
   );
 }

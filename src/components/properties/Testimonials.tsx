@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import cusImage from "@/assets/cus.png";
 import { Reveal } from "@/components/ui/Reveal";
+
+const GOLD = "#c9a227";
 
 type Testimonial = {
   quote: string;
@@ -11,42 +11,30 @@ type Testimonial = {
   rating: number;
 };
 
-/** Placeholder testimonials — replace with the customers' own words. */
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Customer testimonial goes here — a few lines in the customer's own words about the location and why they chose RS Builders & Developers.",
-    name: "Customer Name",
+      "Good talks, clear communication, and a strong network you can rely on.",
+    name: "Abid Hussain",
     rating: 5,
   },
   {
     quote:
-      "Customer testimonial goes here — a few lines about the documentation process and how clearly everything was explained.",
-    name: "Customer Name",
-    rating: 5,
-  },
-  {
-    quote:
-      "Customer testimonial goes here — a few lines about the support received from enquiry through to registration.",
-    name: "Customer Name",
-    rating: 5,
-  },
-  {
-    quote:
-      "Customer testimonial goes here — a few lines about the value of the plot and confidence in the investment.",
-    name: "Customer Name",
+      "Clear guidance from the founder — solid plans and exciting ventures.",
+    name: "Zain",
     rating: 5,
   },
 ];
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
           viewBox="0 0 20 20"
-          className={`h-4 w-4 ${i < rating ? "text-primary" : "text-muted/40"}`}
+          className="h-3.5 w-3.5"
+          style={{ color: i < rating ? GOLD : "rgba(255,255,255,0.2)" }}
           aria-hidden
         >
           <path
@@ -82,55 +70,67 @@ export function Testimonials() {
   }, [next, paused]);
 
   return (
-    <section className="relative overflow-hidden border-y border-border py-20 lg:py-28">
-      <Image
-        src={cusImage}
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-center"
+    <section className="testimonials-gold relative overflow-hidden border-y border-[#c9a227]/20 bg-[#0a0a0b] py-12 text-white lg:py-16">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-60"
         aria-hidden
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 120% at 0% 50%, rgba(201, 162, 39, 0.12), transparent 55%), radial-gradient(ellipse 60% 80% at 100% 30%, rgba(201, 162, 39, 0.08), transparent 50%)",
+        }}
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/88 to-background/75"
+        className="pointer-events-none absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-[#c9a227]/50 to-transparent"
         aria-hidden
       />
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <Reveal className="min-w-0">
-            <p className="section-label">Customer trust</p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
-              500+ Customers. 50+ Stories.
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
+          <Reveal className="shrink-0 lg:max-w-xs lg:py-1">
+            <div className="flex items-center gap-3">
+              <span
+                className="h-px w-8 shrink-0"
+                style={{ backgroundColor: GOLD }}
+                aria-hidden
+              />
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c9a227]">
+                Customer trust
+              </p>
+            </div>
+            <h2 className="mt-4 font-display text-2xl font-medium leading-snug text-white sm:text-3xl">
+              Words from our buyers
             </h2>
-            <p className="mt-6 leading-relaxed text-primary-light">
-              Real estate is built on relationships.
+            <p className="mt-3 text-sm leading-relaxed text-white/65">
+              Honest conversations, clear updates, and support you can count on
+              — from first enquiry to registration.
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="relative min-w-0">
-          <div
-            className="relative min-w-0"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-          >
-            <div>
-              <div className="overflow-hidden rounded-sm border border-border bg-surface/95 shadow-sm backdrop-blur-sm">
+          <Reveal delay={0.06} className="min-w-0 flex-1">
+            <div
+              className="flex min-h-[9.5rem] flex-col lg:min-h-[10.5rem]"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              <div className="flex-1 overflow-hidden rounded-xl border border-[#c9a227]/25 bg-black/40 shadow-[inset_0_1px_0_rgba(201,162,39,0.15)]">
                 <div
-                  className="flex transition-transform duration-500 ease-out"
+                  className="flex h-full transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(-${index * 100}%)` }}
                 >
                   {testimonials.map((testimonial, i) => (
                     <figure
-                      key={i}
-                      className="w-full shrink-0 p-8 sm:p-10"
+                      key={testimonial.name}
+                      className="flex w-full shrink-0 flex-col justify-center px-6 py-6 sm:px-8 sm:py-7"
                       aria-hidden={i !== index}
                     >
                       <Stars rating={testimonial.rating} />
-                      <blockquote className="mt-5 font-display text-xl leading-snug text-primary sm:text-2xl">
+                      <blockquote className="mt-3 font-display text-lg leading-snug text-white/95 sm:text-xl">
                         &ldquo;{testimonial.quote}&rdquo;
                       </blockquote>
-                      <figcaption className="mt-6 text-sm font-semibold text-primary-light">
+                      <figcaption
+                        className="mt-3 text-sm font-semibold"
+                        style={{ color: "rgba(201, 162, 39, 0.85)" }}
+                      >
                         — {testimonial.name}
                       </figcaption>
                     </figure>
@@ -138,7 +138,7 @@ export function Testimonials() {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between">
+              <div className="mt-4 flex items-center justify-between">
                 <div className="flex gap-2">
                   {testimonials.map((_, i) => (
                     <button
@@ -147,9 +147,12 @@ export function Testimonials() {
                       onClick={() => setIndex(i)}
                       aria-label={`Show testimonial ${i + 1}`}
                       aria-current={i === index}
-                      className={`h-1.5 rounded-full transition-all ${
-                        i === index ? "w-6 bg-primary" : "w-1.5 bg-muted"
-                      }`}
+                      className="h-1.5 rounded-full transition-all"
+                      style={{
+                        width: i === index ? "1.5rem" : "0.25rem",
+                        backgroundColor:
+                          i === index ? GOLD : "rgba(201, 162, 39, 0.35)",
+                      }}
                     />
                   ))}
                 </div>
@@ -158,7 +161,7 @@ export function Testimonials() {
                     type="button"
                     onClick={prev}
                     aria-label="Previous testimonial"
-                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-primary-light/30 hover:text-primary"
+                    className="flex h-8 w-8 items-center justify-center rounded-sm border border-[#c9a227]/30 text-[#c9a227] transition-colors hover:border-[#c9a227]/60 hover:bg-[#c9a227]/10"
                   >
                     <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
                       <path
@@ -175,7 +178,7 @@ export function Testimonials() {
                     type="button"
                     onClick={next}
                     aria-label="Next testimonial"
-                    className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-surface text-primary transition-colors hover:border-primary-light/30 hover:text-primary"
+                    className="flex h-8 w-8 items-center justify-center rounded-sm border border-[#c9a227]/30 text-[#c9a227] transition-colors hover:border-[#c9a227]/60 hover:bg-[#c9a227]/10"
                   >
                     <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
                       <path
@@ -191,7 +194,6 @@ export function Testimonials() {
                 </div>
               </div>
             </div>
-          </div>
           </Reveal>
         </div>
       </div>
