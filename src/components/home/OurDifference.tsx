@@ -1,3 +1,4 @@
+import { HowWeWorkBackground } from "@/components/home/HowWeWorkBackground";
 import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 
 const pillars = [
@@ -25,21 +26,23 @@ const pillars = [
 
 export function OurDifference() {
   return (
-    <section className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+    <section className="how-we-work relative isolate overflow-hidden pt-16 pb-10 lg:pt-20 lg:pb-12">
+      <HowWeWorkBackground />
+
+      <div className="relative z-[2] mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal>
-          <p className="section-label">Our difference</p>
+          <p className="section-label">How We Work</p>
           <h2 className="mt-3 max-w-2xl font-display text-4xl font-medium leading-tight text-primary sm:text-5xl">
             Four Things We Don&apos;t Compromise On.
           </h2>
         </Reveal>
         <RevealStagger
-          className="mt-14 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-4"
+          className="how-we-work__cards mt-14 grid gap-px overflow-hidden bg-border/60 sm:grid-cols-2 lg:grid-cols-4"
           stagger={0.08}
         >
           {pillars.map((item) => (
             <RevealItem key={item.num}>
-              <article className="flex h-full flex-col bg-surface p-8 lg:p-10">
+              <article className="how-we-work__card relative flex h-full flex-col p-8 lg:p-10">
                 <span className="font-display text-5xl font-light text-primary/15">
                   {item.num}
                 </span>
